@@ -1,0 +1,25 @@
+{
+  "name": "first-repo-in-this-acc.",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reyangurjar20102008/First-repo-in-this-acc..git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reyangurjar20102008/First-repo-in-this-acc./issues"
+  },
+  "homepage": "https://github.com/reyangurjar20102008/First-repo-in-this-acc.#readme",
+  "dependencies": {
+    "cross-fetch": "^3.1.5",
+    "express": "^4.18.1",
+    "node-fetch": "^3.2.10"
+  }
+}
