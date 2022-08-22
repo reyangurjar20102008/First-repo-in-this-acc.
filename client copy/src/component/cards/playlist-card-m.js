@@ -1,15 +1,21 @@
-import { useEffect, useState } from "react";
+import {useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TextBoldL from "../text/text-bold-l";
 import TextRegularM from '../text/text-regular-m';
 import PlayButton from '../buttons/play-button';
 
 import styles from "./playlist-card-m.module.css";
-
+import IsPlayingContext from '../../context/IsPlayingContext';
 function PlaylistCardM(props) {
-	const[isthisplay, setIsthisPlay] = useState(false)
-
-
+	// isThisPlaying means is this playlist playing???
+	const [isThisPlaying,setIsThisPlaying] = useState(false)
+	const {isPlaying,setIsPlaying} = useContext(IsPlayingContext)
+	useEffect(() => {
+	  // I gotta remove other playlist's isThisPlaying ???
+	
+	  console.log(isThisPlaying)
+	}, [])
+	
 	return (
 		<div className={styles.PlaylistCardSBox}>
 			<Link to={`/playlist/${props.data.id}`}>
@@ -25,9 +31,9 @@ function PlaylistCardM(props) {
 			</Link>
 			<div 
 				
-				className={`${styles.IconBox} ${isthisplay&&props.isPlaying ? styles.ActiveIconBox : ''}`}
+				className={`${styles.IconBox} ${isPlaying && isThisPlaying  ? styles.ActiveIconBox : ''}`}
 			>
-				<PlayButton isthisplay={isthisplay} />
+				<PlayButton isThisPlaying={isThisPlaying} setIsThisPlaying={setIsThisPlaying} />
 			</div>
 		</div>
 	);

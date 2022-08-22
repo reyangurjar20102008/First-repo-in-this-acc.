@@ -38,10 +38,6 @@ function SongDetails({ trackData }){
 }
 
 
-const mapStateToProps = (state) => {
-    return {
-      trackData: state.trackData
-    };
-};
+
   
 export default FooterLeft;
