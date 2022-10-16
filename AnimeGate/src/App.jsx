@@ -337,13 +337,14 @@ function App() {
 
 
         </div> */}
+        <AnimeCardSlider criteria="Popular"/>
         <LatestAnimeSection subOrDub="1" /> 
         {/* 1 = sub
         2= dub
         3 = chinese */}
         <LatestAnimeSection subOrDub="2" /> 
-        <AnimeCardSlider/>
-        <AnimeCardSlider/>
+        
+        
       </div>
     </div>
   );

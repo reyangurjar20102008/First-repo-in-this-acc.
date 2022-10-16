@@ -2,19 +2,20 @@ import { useState, useEffect } from "react";
 
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { useSwiper, Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
-import "swiper/css/navigation";
+// import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 function Slider() {
     const [data, setData] = useState([])
+    const [swiper, setSwiper] = useState(null);
+    
 
     useEffect(() => {
         // declare the data fetching function
         const fetchData = async () => {
-          const response = await fetch('https://api.consumet.org/meta/anilist/popular');
+          const response = await fetch('https://api.consumet.org/meta/anilist/trending');
           const responseJson = await response.json()
           setData(responseJson.results)
           console.log(responseJson.results)
@@ -25,7 +26,7 @@ function Slider() {
           // make sure to catch any error
           .catch(console.error);
       }, [])
-
+    
     return (
         <>
             <div className="p-5 rounded-lg">
@@ -33,7 +34,12 @@ function Slider() {
                     modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                     spaceBetween={30}
                     slidesPerView={1}
-                    navigation={true}
+                    // navigation={true}
+                    onSwiper={(s) => {
+                        console.log("initialize swiper", s);
+                        setSwiper(s);
+                      }}
+                    navigation={{ nextEl: "#swiper-forward", prevEl: "#swiper-back" }}
                     pagination={{ dynamicBullets: true }}
                     loop={true}
                 // autoplay={{
@@ -42,8 +48,12 @@ function Slider() {
                 // }}
                 >
 
-
-
+                    {/* Navigation bar testing starts here */}
+                    <div class="swiper-navigation">
+<div id="swiper-forward" class="swiper-button swiper-button-next" tabindex="0" role="button" aria-label="Next slide"><i class="fas fa-angle-right"></i></div>
+<div id="swiper-back" class="swiper-button swiper-button-prev"  tabindex="0" role="button" aria-label="Previous slide"><i class="fas fa-angle-left"></i></div>
+</div>
+            {/* Ends Here */}
                     {data.map((item) => 
                         <SwiperSlide>
                             <div className="slide group relative  h-[56vh]  ">

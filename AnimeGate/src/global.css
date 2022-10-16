@@ -78,7 +78,7 @@ input {
 .swiper-navigation {
   position: absolute !important;
   bottom: 20px !important;
-  right: 0 !important;
+  right: 10px !important;
   width: 40px !important;
   height: auto !important;
   z-index: 10 !important;
@@ -98,10 +98,13 @@ input {
 }
 
 .swiper-button:hover {
-  background: #ffef00 !important;
+  background: #C3073F !important;
   color: #111 !important;
 }
 
+.swiper-pagination-bullet-active {
+     background-color: #f54378 !important;
+}
 
 
 .item-poster::after{
