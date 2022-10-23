@@ -92,7 +92,7 @@ input {
   height: 40px !important;
   line-height: 40px !important;
   text-align: center !important;
-  border-radius: 3px !important;
+  border-radius: 100% !important;
   display: inline-block !important;
   margin: 3px 0 !important;
 }

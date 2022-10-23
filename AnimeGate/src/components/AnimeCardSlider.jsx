@@ -33,7 +33,9 @@ function AnimeCardSlider(props) {
   return (
     <div className="px-5">
     <h1  className="ml-3">{props.criteria}</h1>
+    
     <div className="item-wrap m-auto flex flex-wrap p-2">
+      
         <Swiper
           slidesPerView={6}
           spaceBetween={25}

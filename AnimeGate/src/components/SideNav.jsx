@@ -11,7 +11,7 @@ const SideNav = () => {
     <div className="menu flex flex-col  my-4 ">
       {/* <h1  className='inline ml-6 font-bold '>Menu</h1> */}
 
-      <button className="btn  px-4 py-3 hover:bg-[#4e4e50] group  text-left my-2 mx-1 rounded-md mr-3   ">
+      <button className="btn   px-4 py-3 hover:bg-[#4e4e50] group  text-left my-2 mx-1 rounded-md mr-3   ">
         <div className="flex">
           <svg
             className="group-hover:fill-[#C3073F] fill-white  mr-2"
